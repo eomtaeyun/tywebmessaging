@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Messaging</title>
+</head>
+<body>
+    <ul>
+        <li><a href="index.html">Product Support Home Page</a></li>
+    </ul>
+    <h1>Product Support - Web Message</h1>
+    <script type="text/javascript" charset="utf-8">
+      (function (g, e, n, es, ys) {
+        g['_genesysJs'] = e;
+        g[e] = g[e] || function () {
+          (g[e].q = g[e].q || []).push(arguments)
+        };
+        g[e].t = 1 * new Date();
+        g[e].c = es;
+        ys = document.createElement('script');
+        ys.async = 1;
+        ys.src = n;
+        ys.charset = 'utf-8';
+        document.head.appendChild(ys);
+      })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
+        environment: 'prod',
+        deploymentId: 'acfffea6-897a-4a14-b577-4391aa096425'
+      });
+
+      Genesys("command", "Database.set", {
+        messaging: {
+          customAttributes: {
+            department: "Product Support",
+            PSG_skill: "API/Integration",
+            device: "mobile",
+            Cust_Issue: "SSO login",
+            name: "William"
+          }
+        }
+      });
+    </script>
+</body>
+</html>
