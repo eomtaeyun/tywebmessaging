@@ -10,6 +10,33 @@
         <li><a href="index.html">Product Support Home Page</a></li>
     </ul>
     <h1>Product Support - Web Message - My Test Org - 2025-06-19 - 0001</h1>
+
+  <input type="text" id="myInput" placeholder="Enter value">
+  <button onclick="getValue()">Get value</button>
+  <p id="result"></p>
+
+<script>
+  let inputValue = '';
+
+  function getValue() {
+    inputValue = document.getElementById("myInput").value;
+    document.getElementById("result").innerText = "Enter value: " + inputValue;
+    Genesys("command", "Database.set", {
+      messaging: {
+        customAttributes: {
+          Enter_value: inputValue,
+          department: "Product Support",
+          PSG_skill: "API/Integration",
+          device: "mobile",
+          Cust_Issue: "SSO login",
+          Cust_name: "TaeYun Eom",
+          Code: "8822"
+        }
+      }
+    });
+  }
+</script>
+    
     <script type="text/javascript" charset="utf-8">
       (function (g, e, n, es, ys) {
         g['_genesysJs'] = e;
@@ -28,15 +55,17 @@
         deploymentId: '7cc3b136-e5b2-47a3-ba53-8fdde32b6286'
       });
 
-      Genesys("command", "Database.set", {
-        messaging: {
-          customAttributes: {
-            department: "Product Support",
-            PSG_skill: "API/Integration",
-            device: "mobile",
-            Cust_Issue: "SSO login",
-            name: "William"
-          }
+//      Genesys("command", "Database.set", {
+//        messaging: {
+//          customAttributes: {
+//            department: "Product Support",
+//            PSG_skill: "API/Integration",
+//            device: "mobile",
+//            Cust_Issue: "SSO login",
+//            name: "William"
+//          }
+
+            
         }
       });
     </script>
